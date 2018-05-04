@@ -1,0 +1,67 @@
+{
+  "name": "hotels",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/IgorCRD/hotels.git",
+  "author": "<igor.crispimdiniz@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "webpack-dev-server --mode development --open",
+    "postinstall": "webpack --mode production",
+    "build": "webpack --mode production",
+    "devbuild": "webpack --mode development",
+    "lint": "eslint ./src",
+    "integration":
+      "jest --passWithNoTests --runInBand --testPathPattern=.*\\.integ\\.\\(test\\|spec\\)\\.js\\(x\\)?",
+    "unit": "jest --passWithNoTests --testPathPattern=.*\\.unit\\.\\(test\\|spec\\)\\.js\\(x\\)?",
+    "test": "yarn run integration && yarn run unit"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/.cache",
+      "<rootDir>/dist",
+      "<rootDir>/build"
+    ],
+    "setupFiles": ["<rootDir>/tests-setup.js"],
+    "resolver": "jest-webpack-resolver"
+  },
+  "jestWebpackResolver": {
+    "webpackConfig": "./webpack.config.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "compression-webpack-plugin": "^1.1.11",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-webpack": "^0.9.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.12.1",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.1.2",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "whatwg-fetch": "^2.0.4"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "root/*": ["./*"],
+      "src/*": ["src/*"]
+    }
+  },
+  "exclude": ["dist", "node_modules"]
+}
